@@ -1,0 +1,18 @@
+{
+	"temperature": {
+		"actualTemp": 15.5,
+		"previousTemps": [
+			{ "value": 15.5, "time": "15:00" },
+			{ "value": 22, "time": "14:00" },
+			{ "value": 12, "time": "13:00" },
+			{ "value": 14, "time": "12:00" },
+			{ "value": 15, "time": "11:00" },
+			{ "value": 16, "time": "10:00" }
+		]
+	},
+	"humidity": {
+		"actualHumidity": 45,
+		"previousHumidities": [45, 55, 65, 50, 43, 23],
+		"minimalHumidityLevel": 30
+	}
+}

@@ -1,0 +1,25 @@
+$primary-color: #2b9348ff;
+$dark-green: #007f5fff;
+$semi-green: #55a630ff;
+$light-green: #80b918ff;
+$lime: #aacc00ff;
+$lemon: #bfd200ff;
+$light-yellow: #d4d700ff;
+$titanium-yellow: #dddf00ff;
+$dark-black: #111;
+$semi-black: #222;
+$light-black: #333;
+$very-light-black: #444;
+$white: #fff;
+
+@mixin box-shadow {
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+@mixin btn {
+	border: none;
+	padding: 10px 15px;
+	border-radius: 15px;
+	font-size: 1.6rem;
+	transition: 0.3s all ease;
+}

@@ -1,0 +1,138 @@
+.header {
+  width: 100%;
+  text-align: center;
+  background-color: #222;
+  border-bottom: 1px solid #111;
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+.header__title {
+  font-size: 4rem;
+}
+
+.theme-toggle {
+  font-size: 1.6rem;
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+}
+
+.section {
+  min-width: 450px;
+  min-height: 300px;
+  background-color: #444;
+  border-radius: 15px;
+  padding: 3rem;
+  font-size: 1.6rem;
+  position: relative;
+  box-shadow: 0 3px 8px #0000003d;
+}
+
+.section__title {
+  padding-bottom: 10px;
+  font-weight: 400;
+}
+
+.section__subtitle {
+  margin: 10px 0 10px 5px;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.section__span {
+  color: #55a630;
+  font-size: 5rem;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+}
+
+.section__options {
+  display: flex;
+}
+
+.section__options .option {
+  width: 50%;
+}
+
+.section canvas {
+  width: 100%;
+  margin: 25px 0 10px;
+}
+
+.work-plan {
+  grid-column: 1 / 3;
+}
+
+.everyday {
+  margin-left: 5px;
+  padding: 15px 0;
+  font-size: 1.6rem;
+}
+
+.input {
+  color: #fff;
+  background-color: #333;
+  border: 2px solid #222;
+  border-radius: 15px;
+  padding: 8px;
+  font-size: 1.8rem;
+  box-shadow: 0 3px 8px #0000003d;
+}
+
+#accept-everyday {
+  color: #fff;
+  background-color: #007f5f;
+  border: 2px solid #111;
+  margin: 10px 0 10px 5px;
+  box-shadow: 0 3px 8px #0000003d;
+}
+
+#accept-everyday:hover {
+  cursor: pointer;
+  background-color: #2b9348;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: Lato, sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  color: #fff;
+  background-color: #333;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+.primary-color {
+  color: #2b9348;
+}
+
+.container {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin: 100px 0;
+  display: grid;
+}
+
+.btn {
+  border: none;
+  border-radius: 15px;
+  padding: 10px 15px;
+  font-size: 1.6rem;
+  transition: all .3s;
+}
+
+/*# sourceMappingURL=index.4ee4707b.css.map */

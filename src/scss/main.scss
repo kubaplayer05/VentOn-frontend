@@ -1,0 +1,35 @@
+@import "./config", "./header", "./content", "./footer";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	font-family: "Lato", sans-serif;
+}
+
+body {
+	background-color: $light-black;
+	color: $white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.primary-color {
+	color: $primary-color;
+}
+
+.container {
+	margin: 100px 0;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 30px;
+}
+
+.btn {
+	@include btn;
+}

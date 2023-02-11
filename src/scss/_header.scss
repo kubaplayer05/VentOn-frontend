@@ -1,0 +1,20 @@
+.header {
+	background-color: $semi-black;
+	border-bottom: 1px solid $dark-black;
+	width: 100%;
+	text-align: center;
+	padding: 2rem 1rem;
+	position: relative;
+
+	&__title {
+		font-size: 4rem;
+	}
+}
+
+.theme-toggle {
+	font-size: 1.6rem;
+	position: absolute;
+	right: 50px;
+	top: 50%;
+	transform: translateY(-50%);
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>VentOn</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/index.4ee4707b.css">
+	</head>
+	<body>
+		<header class="header">
+			<h1 class="header__title">Vent<span class="primary-color">On</span></h1>
+			<div class="theme-toggle">toggle</div>
+		</header>
+		<main class="main">
+			<div class="container">
+				<section class="actual-temp section">
+					<h2 class="section__title">Actual Temperature</h2>
+					<span class="section__span" id="actual-temp-value"></span>
+				</section>
+				<section class="actual-humidity section">
+					<h2 class="section__title">Actual Humidity</h2>
+					<span class="section__span" id="actual-humidity-span"></span>
+				</section>
+				<section class="diagram-temp work-plan section">
+					<h2 class="section__title">Temperature Diagram</h2>
+					<canvas id="temp-canvas"></canvas>
+				</section>
+
+				<section class="diagram-humidity work-plan section">
+					<h2 class="section__title">Humidity Diagram</h2>
+					<canvas id="humidity-canvas"></canvas>
+				</section>
+				<section class="work-plan section">
+					<h2 class="section__title">Schedule</h2>
+					<div class="section__options">
+						<div class="option">
+							<h3 class="section__subtitle">Everyday</h3>
+							<div class="everyday">
+								<input class="input" type="time" id="everyday-start">
+								<span>-</span>
+								<input class="input" type="time" id="everyday-end">
+							</div>
+							<button class="btn" id="accept-everyday">Accept</button>
+						</div>
+						<div class="option">
+							<h3 class="section__subtitle">Custom</h3>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+
+		<script src="/index.739bf03c.js" defer=""></script>
+		<script src="/index.61c1511c.js" defer=""></script>
+	</body>
+</html>

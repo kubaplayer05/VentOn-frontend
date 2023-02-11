@@ -1,0 +1,77 @@
+.section {
+	min-width: 450px;
+	min-height: 300px;
+	background-color: $very-light-black;
+	border-radius: 15px;
+	padding: 3rem;
+	font-size: 1.6rem;
+	position: relative;
+	@include box-shadow;
+
+	&__title {
+		font-weight: 400;
+		padding-bottom: 10px;
+	}
+
+	&__subtitle {
+		font-weight: 400;
+		font-size: 1.8rem;
+		margin: 10px 0 10px 5px;
+	}
+
+	&__span {
+		font-size: 5rem;
+		font-weight: bold;
+		position: absolute;
+		top: 50%;
+		left: 30px;
+		transform: translateY(-50%);
+		color: $semi-green;
+	}
+
+	&__options {
+		display: flex;
+
+		.option {
+			width: 50%;
+		}
+	}
+
+	canvas {
+		margin: 25px 0 10px 0;
+		width: 100%;
+	}
+}
+
+.work-plan {
+	grid-column: 1/3;
+}
+
+.everyday {
+	margin-left: 5px;
+	padding: 15px 0;
+	font-size: 1.6rem;
+}
+
+.input {
+	font-size: 1.8rem;
+	padding: 8px;
+	border: 2px solid $semi-black;
+	border-radius: 15px;
+	background-color: $light-black;
+	color: $white;
+	@include box-shadow;
+}
+
+#accept-everyday {
+	margin: 10px 0 10px 5px;
+	border: 2px solid $dark-black;
+	background-color: $dark-green;
+	color: $white;
+	@include box-shadow;
+
+	&:hover {
+		cursor: pointer;
+		background-color: $primary-color;
+	}
+}

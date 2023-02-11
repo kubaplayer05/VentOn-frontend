@@ -1,0 +1,25 @@
+{
+	"temperature": {
+		"actualTemp": 15.5,
+		"previousTemps": [
+			{ "value": 15.5, "time": "15:00" },
+			{ "value": 22, "time": "14:00" },
+			{ "value": 12, "time": "13:00" },
+			{ "value": 14, "time": "12:00" },
+			{ "value": 15, "time": "11:00" },
+			{ "value": 16, "time": "10:00" }
+		]
+	},
+	"humidity": {
+		"actualHumidity": 45,
+		"previousHumidities": [
+			{ "value": 45, "time": "15:00" },
+			{ "value": 55, "time": "14:00" },
+			{ "value": 65, "time": "13:00" },
+			{ "value": 50, "time": "12:00" },
+			{ "value": 43, "time": "11:00" },
+			{ "value": 23, "time": "10:00" }
+		],
+		"minimalHumidityLevel": 30
+	}
+}

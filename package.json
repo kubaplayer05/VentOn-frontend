@@ -1,0 +1,21 @@
+{
+	"name": "venton-frontend",
+	"version": "1.0.0",
+	"description": "frontend of the venton application for receiving and sending data to venton device",
+	"main": "./dist/main.js",
+	"source": "./src/index.html",
+	"module": "./dist/module.js",
+	"scripts": {
+		"sass": "sass --watch ./src/scss/main.scss ./src/styles/style.css",
+		"start": "parcel",
+		"build": "parcel build"
+	},
+	"author": "Jakub Grzybek",
+	"license": "ISC",
+	"devDependencies": {
+		"parcel": "^2.8.3"
+	},
+	"dependencies": {
+		"chart.js": "^4.2.0"
+	}
+}
