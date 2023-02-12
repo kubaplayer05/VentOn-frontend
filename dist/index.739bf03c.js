@@ -573,8 +573,6 @@ const options = {
     }
 };
 // Chart settings
-// const DATA_COUNT = 6 // How much data on OX axis
-// const NUMBER_CFG = { count: DATA_COUNT, min: -10, max: 40 } // OY axis
 (0, _autoDefault.default).defaults.color = "#fff";
 // listeners
 window.addEventListener("DOMContentLoaded", init);

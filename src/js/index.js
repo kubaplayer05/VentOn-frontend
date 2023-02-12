@@ -17,9 +17,6 @@ const options = {
 
 // Chart settings
 
-// const DATA_COUNT = 6 // How much data on OX axis
-// const NUMBER_CFG = { count: DATA_COUNT, min: -10, max: 40 } // OY axis
-
 Chart.defaults.color = "#fff"
 
 // listeners
