@@ -19,6 +19,7 @@ $white: #fff;
 @mixin btn {
 	border: none;
 	padding: 10px 15px;
+	margin: 10px 5px;
 	border-radius: 15px;
 	font-size: 1.6rem;
 	transition: 0.3s all ease;

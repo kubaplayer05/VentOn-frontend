@@ -21,10 +21,58 @@
 			<div class="container">
 				<section class="actual-temp section">
 					<h2 class="section__title">Actual Temperature</h2>
+					<svg
+						class="svg-icon"
+						id="temperature-svg"
+						xmlns="http://www.w3.org/2000/svg"
+						width="20"
+						height="20"
+						fill="#ffffff"
+						viewBox="0 0 256 256">
+						<rect width="256" height="256" fill="none"></rect>
+						<polyline
+							points="176.2 99.7 224.2 99.7 224.2 51.7"
+							fill="none"
+							stroke="#ffffff"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="24"></polyline>
+						<path
+							d="M190.2,190.2a88,88,0,1,1,0-124.4l34,33.9"
+							fill="none"
+							stroke="#ffffff"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="24"></path>
+					</svg>
 					<span class="section__span" id="actual-temp-value"></span>
 				</section>
 				<section class="actual-humidity section">
 					<h2 class="section__title">Actual Humidity</h2>
+					<svg
+						class="svg-icon"
+						id="humidity-svg"
+						xmlns="http://www.w3.org/2000/svg"
+						width="20"
+						height="20"
+						fill="#ffffff"
+						viewBox="0 0 256 256">
+						<rect width="256" height="256" fill="none"></rect>
+						<polyline
+							points="176.2 99.7 224.2 99.7 224.2 51.7"
+							fill="none"
+							stroke="#ffffff"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="24"></polyline>
+						<path
+							d="M190.2,190.2a88,88,0,1,1,0-124.4l34,33.9"
+							fill="none"
+							stroke="#ffffff"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="24"></path>
+					</svg>
 					<span class="section__span" id="actual-humidity-span"></span>
 				</section>
 				<section class="diagram-temp work-plan section">
@@ -46,7 +94,7 @@
 								<span>-</span>
 								<input class="input" type="time" id="everyday-end" />
 							</div>
-							<button class="btn" id="accept-everyday">Accept</button>
+							<button class="btn accept" id="accept-everyday">Accept</button>
 						</div>
 						<div class="option">
 							<h3 class="section__subtitle">Custom</h3>
@@ -55,9 +103,46 @@
 				</section>
 				<section class="section humidity-level">
 					<h2 class="section__title">Set Minimal Humidity Level</h2>
+
+					<input
+						class="input"
+						type="number"
+						id="minimal-level"
+						min="0"
+						max="100" />
+
+					<button class="btn accept" id="accept-humidity-level">Accept</button>
 				</section>
 				<section class="section power-plan">
 					<h2 class="section__title">Power On/Off</h2>
+					<button class="btn" id="power-btn">
+						<svg
+							class="power-svg"
+							xmlns="http://www.w3.org/2000/svg"
+							width="60"
+							height="60"
+							fill="#ffffff"
+							viewBox="0 0 256 256">
+							<rect width="256" height="256" fill="none"></rect>
+							<line
+								x1="128"
+								y1="48"
+								x2="128"
+								y2="124"
+								fill="none"
+								stroke="#ffffff"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="24"></line>
+							<path
+								d="M176,54.2a88,88,0,1,1-96,0"
+								fill="none"
+								stroke="#ffffff"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="24"></path>
+						</svg>
+					</button>
 				</section>
 			</div>
 		</main>

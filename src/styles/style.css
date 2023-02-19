@@ -77,16 +77,56 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-#accept-everyday {
-  margin: 10px 0 10px 5px;
+.accept {
+  /* position: absolute;
+  left: 30px;
+  bottom: 20px; */
   border: 2px solid #111;
   background-color: #007f5f;
   color: #fff;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-#accept-everyday:hover {
+.accept:hover {
   cursor: pointer;
   background-color: #2b9348;
+}
+
+.humidity-level {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.svg-icon {
+  position: absolute;
+  top: 35px;
+  right: 40px;
+  cursor: pointer;
+}
+
+#accept-everyday {
+  margin: 25px 0;
+}
+
+#accept-humidity-level {
+  margin: 25px 0;
+}
+
+#minimal-level {
+  width: 50%;
+  text-align: right;
+  margin: 20px 0;
+}
+
+#power-btn {
+  background-color: transparent;
+  border: 1px solid #111;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 * {
@@ -122,6 +162,7 @@ body {
 .btn {
   border: none;
   padding: 10px 15px;
+  margin: 10px 5px;
   border-radius: 15px;
   font-size: 1.6rem;
   transition: 0.3s all ease;

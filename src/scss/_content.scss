@@ -63,8 +63,10 @@
 	@include box-shadow;
 }
 
-#accept-everyday {
-	margin: 10px 0 10px 5px;
+.accept {
+	/* position: absolute;
+	left: 30px;
+	bottom: 20px; */
 	border: 2px solid $dark-black;
 	background-color: $dark-green;
 	color: $white;
@@ -74,4 +76,42 @@
 		cursor: pointer;
 		background-color: $primary-color;
 	}
+}
+
+.humidity-level {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: space-between;
+}
+
+.svg-icon {
+	position: absolute;
+	top: 35px;
+	right: 40px;
+	cursor: pointer;
+}
+
+#accept-everyday {
+	margin: 25px 0;
+}
+
+#accept-humidity-level {
+	margin: 25px 0;
+}
+
+#minimal-level {
+	width: 50%;
+	text-align: right;
+	margin: 20px 0;
+}
+
+#power-btn {
+	background-color: transparent;
+	border: 1px solid $dark-black;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	cursor: pointer;
 }

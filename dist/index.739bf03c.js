@@ -560,17 +560,28 @@ function hmrAccept(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _auto = require("chart.js/auto");
 var _autoDefault = parcelHelpers.interopDefault(_auto);
+const socket = new WebSocket("ws://localhost:3000");
+// Connection opened
+socket.addEventListener("open", (event)=>{
+    socket.send("Hello Server!");
+});
+// Listen for messages
+socket.addEventListener("message", (event)=>{
+    if (event.data === "Turn on") console.log("Turn on");
+});
+//
 const actualTempSpan = document.querySelector("#actual-temp-value");
 const actualHumiditySpan = document.querySelector("#actual-humidity-span");
 const tempDiagram = document.querySelector("#temp-canvas");
 const humidityDiagram = document.querySelector("#humidity-canvas");
 // fetch settings
-const dataPath = "./data.json";
-const options = {
+const dataPath = "http://127.0.0.1:3000/api";
+const getOptions = {
     method: "GET",
     headers: {
         "Content-Type": "application/json"
-    }
+    },
+    mode: "no-cors"
 };
 // Chart settings
 (0, _autoDefault.default).defaults.color = "#fff";
@@ -610,7 +621,11 @@ const createChart = async (target, data, valueType)=>{
     new (0, _autoDefault.default)(target, config);
 };
 async function init() {
-    fetch(dataPath, options).then((res)=>res.json()).then((data)=>{
+    fetch(`${dataPath}`, getOptions).then((res)=>{
+        console.log(res);
+        return res.json();
+    }).then((data)=>{
+        console.log(data);
         let previousTemps = data.temperature.previousTemps;
         let previousHumidities = data.humidity.previousHumidities;
         // upload data
