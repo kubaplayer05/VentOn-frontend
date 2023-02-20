@@ -563,17 +563,18 @@ var _autoDefault = parcelHelpers.interopDefault(_auto);
 const socket = new WebSocket("ws://localhost:3000");
 // Connection opened
 socket.addEventListener("open", (event)=>{
-    socket.send("Hello Server!");
+//socket.send('{"head": connection, "value": "true"}')
 });
 // Listen for messages
-socket.addEventListener("message", (event)=>{
-    if (event.data === "Turn on") console.log("Turn on");
-});
+socket.addEventListener("message", (event)=>{});
 //
+// variables
+let TurnOn = false;
 const actualTempSpan = document.querySelector("#actual-temp-value");
 const actualHumiditySpan = document.querySelector("#actual-humidity-span");
 const tempDiagram = document.querySelector("#temp-canvas");
 const humidityDiagram = document.querySelector("#humidity-canvas");
+const powerBtn = document.querySelector(".power-svg");
 // fetch settings
 const dataPath = "http://127.0.0.1:3000/api";
 const getOptions = {
@@ -587,6 +588,7 @@ const getOptions = {
 (0, _autoDefault.default).defaults.color = "#fff";
 // listeners
 window.addEventListener("DOMContentLoaded", init);
+powerBtn.addEventListener("click", switchPower);
 // functions
 const createChart = async (target, data, valueType)=>{
     const config = {
@@ -669,6 +671,13 @@ async function checkActualHumidity() {
     }).catch((err)=>{
         console.log(err);
     });
+}
+function switchPower() {
+    TurnOn = !TurnOn;
+    socket.send(`{
+		"head": "power",
+		"value": "${TurnOn}"
+	}`);
 }
 
 },{"chart.js/auto":"d8NN9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"d8NN9":[function(require,module,exports) {

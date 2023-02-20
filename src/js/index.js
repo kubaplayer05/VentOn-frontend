@@ -4,22 +4,22 @@ const socket = new WebSocket("ws://localhost:3000")
 
 // Connection opened
 socket.addEventListener("open", event => {
-	socket.send("Hello Server!")
+	//socket.send('{"head": connection, "value": "true"}')
 })
 
 // Listen for messages
-socket.addEventListener("message", event => {
-	if (event.data === "Turn on") {
-		console.log("Turn on")
-	}
-})
+socket.addEventListener("message", event => {})
 
 //
+
+// variables
+let TurnOn = false
 
 const actualTempSpan = document.querySelector("#actual-temp-value")
 const actualHumiditySpan = document.querySelector("#actual-humidity-span")
 const tempDiagram = document.querySelector("#temp-canvas")
 const humidityDiagram = document.querySelector("#humidity-canvas")
+const powerBtn = document.querySelector(".power-svg")
 
 // fetch settings
 
@@ -39,6 +39,8 @@ Chart.defaults.color = "#fff"
 // listeners
 
 window.addEventListener("DOMContentLoaded", init)
+
+powerBtn.addEventListener("click", switchPower)
 
 // functions
 
@@ -148,4 +150,12 @@ async function checkActualHumidity() {
 		.catch(err => {
 			console.log(err)
 		})
+}
+
+function switchPower() {
+	TurnOn = !TurnOn
+	socket.send(`{
+		"head": "power",
+		"value": "${TurnOn}"
+	}`)
 }
