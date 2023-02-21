@@ -1,14 +1,37 @@
 import Chart from "chart.js/auto"
-
 const socket = new WebSocket("ws://localhost:3000")
 
 // Connection opened
 socket.addEventListener("open", event => {
-	//socket.send('{"head": connection, "value": "true"}')
+	console.log({ head: "connection", value: "true" })
 })
 
 // Listen for messages
-socket.addEventListener("message", event => {})
+socket.addEventListener("message", event => {
+	try {
+		let data = JSON.parse(event.data)
+		console.log(data)
+
+		if (data.to === "website") {
+			switch (data.head) {
+				case "power":
+					TurnOn = data.value
+					setBtn(TurnOn)
+					break
+
+				case "temp":
+					updateTemp(data.value)
+					break
+
+				case "hum":
+					updateHumidity(data.value)
+					break
+			}
+		}
+	} catch (err) {
+		console.error(err)
+	}
+})
 
 //
 
@@ -40,9 +63,12 @@ Chart.defaults.color = "#fff"
 
 window.addEventListener("DOMContentLoaded", init)
 
-powerBtn.addEventListener("click", switchPower)
+powerBtn.addEventListener("click", () => {
+	switchPower()
+	powerBtn.classList.toggle("active")
+})
 
-// functions
+// arrow functions
 
 const createChart = async (target, data, valueType) => {
 	const config = {
@@ -77,6 +103,14 @@ const createChart = async (target, data, valueType) => {
 
 	new Chart(target, config)
 }
+
+const setBtn = value => {
+	if (value) {
+		powerBtn.classList.add("active")
+	} else powerBtn.classList.remove("active")
+}
+
+// async functions
 
 async function init() {
 	fetch(`${dataPath}`, getOptions)
@@ -130,32 +164,21 @@ async function init() {
 		})
 }
 
-async function checkActualTemp() {
-	fetch(dataPath, options)
-		.then(res => res.json())
-		.then(data => {
-			actualTempSpan.textContent = `${data.temperature.actualTemp} °C`
-		})
-		.catch(err => {
-			console.log(err)
-		})
+async function updateTemp(value) {
+	actualTempSpan.textContent = `${value} °C`
 }
 
-async function checkActualHumidity() {
-	fetch(dataPath, options)
-		.then(res => res.json())
-		.then(data => {
-			actualHumiditySpan.textContent = `${data.humidity.actualHumidity} %`
-		})
-		.catch(err => {
-			console.log(err)
-		})
+async function updateHumidity(value) {
+	actualHumiditySpan.textContent = `${value} %`
 }
+
+// functions
 
 function switchPower() {
 	TurnOn = !TurnOn
 	socket.send(`{
 		"head": "power",
-		"value": "${TurnOn}"
+		"value": "${TurnOn}",
+		"from": "website"
 	}`)
 }
