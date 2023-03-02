@@ -11,28 +11,29 @@
 		<link rel="stylesheet" href="/index.4ee4707b.css">
 	</head>
 	<body>
+		<div class="modal">
+			<div class="modal__content">
+				<div class="modal__item"></div>
+			</div>
+			<div class="modal__footer">
+				<button class="btn">close</button>
+				<button class="btn warning">delate</button>
+			</div>
+		</div>
+		<div class="shadow"></div>
 		<header class="header">
 			<h1 class="header__title">Vent<span class="primary-color">On</span></h1>
-			<div class="theme-toggle">toggle</div>
 		</header>
 		<main class="main">
 			<div class="container">
 				<section class="actual-temp section">
 					<h2 class="section__title">Actual Temperature</h2>
-					<svg class="svg-icon" id="temperature-svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ffffff" viewbox="0 0 256 256">
-						<rect width="256" height="256" fill="none"></rect>
-						<polyline points="176.2 99.7 224.2 99.7 224.2 51.7" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline>
-						<path d="M190.2,190.2a88,88,0,1,1,0-124.4l34,33.9" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path>
-					</svg>
+
 					<span class="section__span" id="actual-temp-value"></span>
 				</section>
 				<section class="actual-humidity section">
 					<h2 class="section__title">Actual Humidity</h2>
-					<svg class="svg-icon" id="humidity-svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ffffff" viewbox="0 0 256 256">
-						<rect width="256" height="256" fill="none"></rect>
-						<polyline points="176.2 99.7 224.2 99.7 224.2 51.7" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline>
-						<path d="M190.2,190.2a88,88,0,1,1,0-124.4l34,33.9" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path>
-					</svg>
+
 					<span class="section__span" id="actual-humidity-span"></span>
 				</section>
 				<section class="diagram-temp work-plan section">
@@ -57,7 +58,25 @@
 							<button class="btn accept" id="accept-everyday">Accept</button>
 						</div>
 						<div class="option">
-							<h3 class="section__subtitle">Custom</h3>
+							<div class="flex">
+								<h3 class="section__subtitle">Custom</h3>
+								<div class="day-selection">
+									<div data-day="mon" data-id="1" class="day">M</div>
+									<div data-day="tue" data-id="2" class="day">T</div>
+									<div data-day="wed" data-id="3" class="day">W</div>
+									<div data-day="thu" data-id="4" class="day">Tu</div>
+									<div data-day="fri" data-id="5" class="day">F</div>
+									<div data-day="sat" data-id="6" class="day">Sa</div>
+									<div data-day="sun" data-id="7" class="day">Su</div>
+								</div>
+							</div>
+
+							<div class="everyday">
+								<input class="input" type="time" id="custom-start">
+								<span>-</span>
+								<input class="input" type="time" id="custom-end">
+							</div>
+							<button class="btn accept" id="accept-custom">Accept</button>
 						</div>
 					</div>
 				</section>
@@ -70,7 +89,7 @@
 				</section>
 				<section class="section power-plan">
 					<h2 class="section__title">Power On/Off</h2>
-					<button class="btn" id="power-btn">
+					<button class="btn warning" id="power-btn">
 						<svg class="power-svg" xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#ffffff" viewbox="0 0 256 256">
 							<rect width="256" height="256" fill="none"></rect>
 							<line x1="128" y1="48" x2="128" y2="124" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>

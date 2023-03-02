@@ -120,13 +120,91 @@
 }
 
 #power-btn {
-  background-color: transparent;
   border: 1px solid #111;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
+}
+
+.warning {
+  background-color: #d7263d;
+}
+
+.active {
+  background-color: #2b9348;
+}
+
+.day-selection {
+  display: flex;
+  margin-left: 20px;
+  gap: 10px;
+  align-items: start;
+}
+
+.day {
+  margin: 10px 0;
+  padding: 6px 8px;
+  background-color: #333;
+  border-radius: 8px;
+  transition: 0.3s ease all;
+}
+.day:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.selected-day {
+  background-color: #bfd200;
+  color: #333;
+}
+
+.flex {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+
+.info {
+  background-color: #aacc00;
+}
+.info:hover {
+  cursor: pointer;
+  background-color: #bfd200;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  min-height: 500px;
+  z-index: -1;
+  background-color: #333;
+  border-radius: 5px;
+}
+.modal__footer {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.shadow {
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 * {
