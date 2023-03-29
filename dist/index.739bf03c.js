@@ -603,7 +603,7 @@ const minimalHumInput = document.querySelector("#minimal-level");
 const everydayStart = document.querySelector("#everyday-start");
 const everydayEnd = document.querySelector("#everyday-end");
 const everydayBtn = document.querySelector("#accept-everyday");
-const customdays = document.querySelectorAll(".day");
+const customDays = document.querySelectorAll(".day");
 const customStart = document.querySelector("#custom-start");
 const customEnd = document.querySelector("#custom-end");
 const customBtn = document.querySelector("#accept-custom");
@@ -625,6 +625,9 @@ powerSvg.addEventListener("click", ()=>{
     if (TurnOn) {
         powerBtn.classList.add("active");
         powerBtn.classList.remove("warning");
+    } else {
+        powerBtn.classList.remove("active");
+        powerBtn.classList.add("warning");
     }
 });
 minimalHumBtn.addEventListener("click", ()=>{
@@ -670,7 +673,7 @@ customBtn.addEventListener("click", ()=>{
         });
     });
 });
-customdays.forEach((day)=>{
+customDays.forEach((day)=>{
     day.addEventListener("click", ()=>{
         day.classList.toggle("selected-day");
     });
